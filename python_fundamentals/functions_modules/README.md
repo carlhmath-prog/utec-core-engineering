@@ -22,7 +22,6 @@ False
 >>> islower('3')
 False
 
-
 1. A mayúsculas
 Escribe una función:
 

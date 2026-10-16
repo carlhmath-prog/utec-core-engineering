@@ -40,6 +40,19 @@ Ejemplo
 HOLBERTON
 Repositorio:
 
-Repositorio GitHub: utec-core-engineering
-Directorio: python_fundamentals/functions_modules
-Archivo: uppercase.py
+2. Imprime el último dígito
+Escribe una función:
+
+def print_last_digit(number):
+La función debe:
+
+Imprimir el último dígito de number.
+Devolver el valor del último dígito.
+El último dígito siempre debe ser positivo.
+
+Ejemplo:
+
+>>> print_last_digit(98)
+8
+>>> print_last_digit(-1024)
+4

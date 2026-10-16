@@ -38,7 +38,6 @@ Ejemplo
 
 >>> uppercase("Holberton")
 HOLBERTON
-Repositorio:
 
 2. Imprime el último dígito
 Escribe una función:
@@ -57,20 +56,62 @@ Ejemplo:
 >>> print_last_digit(-1024)
 4
 
-3. a ^ b
-Escribe una función:
+4. Ejecución de scripts y comportamiento de importación
+Introducción
+Hasta ahora, has definido funciones y las has ejecutado dentro del mismo archivo. En esta tarea, analizarás qué cambia cuando las funciones se colocan en un archivo y ese archivo se reutiliza desde otro.
 
-def pow(a, b):
-La función debe devolver el valor de a elevado a la potencia de b.
+Cuando Python importa un archivo, lo ejecuta de arriba abajo en orden para crear su espacio de nombres. Esto significa que:
 
+Las definiciones de funciones se ejecutan.
+Las asignaciones de variables se ejecutan.
+Cualquier instrucción en el nivel superior (incluido print) también se ejecuta.
+Si la ejecución no se controla, importar un archivo puede provocar un comportamiento no deseado.
+
+El objetivo de esta tarea es:
+
+Observar la diferencia entre ejecutar un archivo directamente e importarlo.
+Entender por qué el código de nivel superior se ejecuta durante la importación.
+Aprender el papel de if __name__ == "__main__".
+Distinguir claramente entre definir comportamiento y ejecutar comportamiento.
+Debes observar cuidadosamente el comportamiento antes y después de introducir la protección de ejecución. El cuestionario que sigue a esta tarea evaluará tu comprensión de estos conceptos.
+
+Instrucciones:
+Crea dos archivos:
+
+Archivo: simple_add.py
+
+Define una función add(a, b) que devuelva la suma de dos números.
+En el nivel superior del archivo (fuera de cualquier función, pero después de la definición), llama a la función e imprime el resultado de:
+add(3, 5)
+Archivo: test_import.py
+
+Importa simple_add.
+Ejecuta python3 test_import.py
+Observa qué ocurre.
+
+Luego modifica simple_add.py:
+
+Mueve la llamada a print dentro de:
+  if __name__ == "__main__":
+Ejecuta de nuevo.
+
+Debes asegurarte de que:
+
+Al ejecutar python3 simple_add.py, se imprima el resultado.
+Al ejecutar python3 test_import.py, no se imprima nada.
+
+5. Importar una función simple desde un archivo simple
+Escribe un programa que importe la función add() del archivo add_0.py e imprima el resultado de la suma 1 + 2 = 3
+
+def add(a, b):
+El programa debe:
+
+Asignar 1 a una variable a.
+Asignar 2 a una variable b.
+Imprimir:
+1 + 2 = 3
 Restricciones:
 
-No está permitido usar el operador de exponente integrado **.
-No está permitido importar módulos.
-Debes implementar la lógica manualmente usando un bucle.
-Ejemplo:
-
->>> pow(2, 4)
-16
->>> pow(5, 0)
-1
+No se te permite usar * para importar.
+No se te permite usar __import__.
+El programa no debe ejecutarse cuando se importe.

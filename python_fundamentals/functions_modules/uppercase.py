@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
 
-#!/usr/bin/env python3
-
-
 def uppercase(str):
     """Imprime una cadena en mayúsculas usando conversión ASCII."""
     result = ""

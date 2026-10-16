@@ -56,3 +56,21 @@ Ejemplo:
 8
 >>> print_last_digit(-1024)
 4
+
+3. a ^ b
+Escribe una función:
+
+def pow(a, b):
+La función debe devolver el valor de a elevado a la potencia de b.
+
+Restricciones:
+
+No está permitido usar el operador de exponente integrado **.
+No está permitido importar módulos.
+Debes implementar la lógica manualmente usando un bucle.
+Ejemplo:
+
+>>> pow(2, 4)
+16
+>>> pow(5, 0)
+1

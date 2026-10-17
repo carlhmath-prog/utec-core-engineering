@@ -115,3 +115,21 @@ Restricciones:
 No se te permite usar * para importar.
 No se te permite usar __import__.
 El programa no debe ejecutarse cuando se importe.
+
+6. Mi primera caja de herramientas
+Escribe un programa que importe funciones desde calculator_1.py e imprima el resultado de:
+
+suma
+resta
+multiplicación
+división
+Usando:
+
+a = 10
+b = 5
+Cada operación debe imprimirse en su propia línea.
+
+Restricciones:
+
+No se te permite usar * para importar.
+El programa no debe ejecutarse cuando se importe.

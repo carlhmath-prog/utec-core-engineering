@@ -23,3 +23,26 @@ $ ./main.py
 3
 4
 5
+
+1. Acceso seguro a un elemento de una lista
+Escribe una función que recupere un elemento de una lista como en C.
+
+Prototipo: def element_at(my_list, idx):
+Si idx es negativo o está fuera de rango, devuelve None.
+En caso contrario, devuelve el elemento en la posición idx.
+Ejemplo de ejecución:
+
+$ cat main.py
+#!/usr/bin/env python3
+element_at = __import__('element_at').element_at
+
+my_list = ["a", "b", "c", "d", "e"]
+print(element_at(my_list, 3))
+print(element_at(my_list, -1))
+print(element_at(my_list, 15))
+
+$ ./main.py
+d
+None
+None
+

@@ -65,3 +65,28 @@ print(replace_in_list(my_list, 15, 99))
 $ ./main.py
 [1, 2, 3, 99, 5]
 [1, 2, 3, 99, 5]
+
+3. Imprima una matriz de enteros
+Escribe una función que imprima una matriz de enteros.
+
+Prototipo: def print_matrix_integer(matrix=[[]]):
+matrix es una lista de listas (lista 2D).
+Formatea cada fila en su propia línea.
+Los valores de una fila deben estar separados por un solo espacio.
+Ejemplo de ejecución:
+
+$ cat main.py
+#!/usr/bin/env python3
+print_matrix_integer = __import__('print_matrix_integer').print_matrix_integer
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+print_matrix_integer(matrix)
+
+$ ./main.py
+1 2 3
+4 5 6
+7 8 9

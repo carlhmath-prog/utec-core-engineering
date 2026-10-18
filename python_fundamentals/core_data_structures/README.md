@@ -115,3 +115,20 @@ $ ./main.py
 (1, 89)
 (0, 0)
 
+5. Elementos comunes en dos conjuntos
+Escribe una función que devuelva un conjunto de elementos comunes en dos conjuntos.
+
+Prototipo: def common_elements(set_1, set_2):
+Devuelve un nuevo conjunto que contenga solo los elementos presentes en set_1 y set_2.
+Ejemplo de ejecución:
+
+$ cat main.py
+#!/usr/bin/env python3
+common_elements = __import__('common_elements').common_elements
+
+set_1 = {"Python", "C", "Javascript"}
+set_2 = {"Bash", "C", "Ruby", "Perl"}
+print(sorted(list(common_elements(set_1, set_2))))
+
+$ ./main.py
+['C']

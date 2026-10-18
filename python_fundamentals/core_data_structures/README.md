@@ -154,3 +154,23 @@ $ ./main.py
 {'language': 'Python', 'number': 89, 'track': 'Low level'}
 {'language': 'Python', 'number': 89, 'track': 'Low level', 'city': 'San Francisco'}
 
+7. Mejor puntuación
+Escribe una función que devuelva la clave con el valor entero más grande.
+
+Prototipo: def best_score(a_dictionary):
+Puedes asumir que todos los valores son enteros.
+Si a_dictionary es None o está vacío, devuelve None.
+Puedes asumir que todos los valores son diferentes.
+Ejemplo de ejecución:
+
+$ cat main.py
+#!/usr/bin/env python3
+best_score = __import__('best_score').best_score
+
+scores = {'John': 12, 'Bob': 14, 'Mike': 15, 'Molly': 16, 'Adam': 10}
+print(best_score(scores))
+print(best_score(None))
+
+$ ./main.py
+Molly
+None

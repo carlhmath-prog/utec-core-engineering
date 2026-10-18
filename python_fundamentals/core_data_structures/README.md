@@ -90,3 +90,28 @@ $ ./main.py
 1 2 3
 4 5 6
 7 8 9
+
+4. Adición de tuplas
+Escribe una función que sume dos tuplas.
+
+Prototipo: def add_tuple(tuple_a=(), tuple_b=()):
+Devuelve una nueva tupla con exactamente dos enteros.
+Trata los valores faltantes como 0.
+Ignora los valores más allá de los dos primeros.
+Ejemplo de ejecución:
+
+$ cat main.py
+#!/usr/bin/env python3
+add_tuple = __import__('add_tuple').add_tuple
+
+print(add_tuple((1, 89), (88, 11)))
+print(add_tuple((1, 89), (1, )))
+print(add_tuple((1, 89), ()))
+print(add_tuple((), ()))
+
+$ ./main.py
+(89, 100)
+(2, 89)
+(1, 89)
+(0, 0)
+

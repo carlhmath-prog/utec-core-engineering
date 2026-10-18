@@ -46,3 +46,22 @@ d
 None
 None
 
+2. Reemplaza un elemento en una lista
+Escribe una función que reemplace un elemento de una lista en una posición específica.
+
+Prototipo: def replace_in_list(my_list, idx, element):
+Si idx es negativo o está fuera de rango, devuelve la lista original sin cambios.
+En caso contrario, reemplaza el elemento en la posición idx por element y devuelve la lista.
+Ejemplo de ejecución:
+
+$ cat main.py
+#!/usr/bin/env python3
+replace_in_list = __import__('replace_in_list').replace_in_list
+
+my_list = [1, 2, 3, 4, 5]
+print(replace_in_list(my_list, 3, 99))
+print(replace_in_list(my_list, 15, 99))
+
+$ ./main.py
+[1, 2, 3, 99, 5]
+[1, 2, 3, 99, 5]

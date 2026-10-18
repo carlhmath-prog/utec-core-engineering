@@ -132,3 +132,25 @@ print(sorted(list(common_elements(set_1, set_2))))
 
 $ ./main.py
 ['C']
+
+6. Actualizar o agregar una clave/valor en un diccionario
+Escribe una función que reemplace o agregue un par clave/valor en un diccionario.
+
+Prototipo: def update_dictionary(a_dictionary, key, value):
+Si key ya existe, reemplaza su valor.
+Si key no existe, créala.
+Devuelve el diccionario (actualizado).
+Ejemplo de ejecución:
+
+$ cat main.py
+#!/usr/bin/env python3
+update_dictionary = __import__('update_dictionary').update_dictionary
+
+d = {'language': 'C', 'number': 89, 'track': 'Low level'}
+print(update_dictionary(d, 'language', 'Python'))
+print(update_dictionary(d, 'city', 'San Francisco'))
+
+$ ./main.py
+{'language': 'Python', 'number': 89, 'track': 'Low level'}
+{'language': 'Python', 'number': 89, 'track': 'Low level', 'city': 'San Francisco'}
+

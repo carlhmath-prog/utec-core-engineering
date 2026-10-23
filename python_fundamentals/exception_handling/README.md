@@ -113,3 +113,9 @@ Escribe una función que lance un TypeError.
 
 Prototipo: def raise_exception():
 La función debe lanzar un TypeError.
+
+5. Lanzar un mensaje
+Escribe una función que lance un NameError con un mensaje personalizado.
+
+Prototipo: def raise_exception_msg(message=""):
+La función debe lanzar un NameError con message.

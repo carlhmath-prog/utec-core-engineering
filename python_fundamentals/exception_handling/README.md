@@ -78,3 +78,33 @@ nb_print: 5
     print("{:d}".format(my_list[i]), end="")
 IndexError: list index out of range
 spam@camelot:~/$ 
+
+3. Dividir dos enteros de forma segura
+Escribe una función que divida dos enteros.
+
+Prototipo: def safe_print_division(a, b):
+Realiza la división dentro de un bloque try.
+Si ocurre cualquier otra excepción, imprime "Inside result: None".
+Imprime siempre "Inside result: <result>" usando finally.
+Devuelve el resultado (o None).
+spam@camelot:~/$ cat main.py
+#!/usr/bin/env python3
+safe_print_division = __import__('safe_print_division').safe_print_division
+
+a = 12
+b = 2
+result = safe_print_division(a, b)
+print("{:d} / {:d} = {}".format(a, b, result))
+
+a = 12
+b = 0
+result = safe_print_division(a, b)
+print("{:d} / {:d} = {}".format(a, b, result))
+
+spam@camelot:~/$ ./main.py
+Inside result: 6.0
+12 / 2 = 6.0
+Inside result: None
+12 / 0 = None
+spam@camelot:~/$ 
+

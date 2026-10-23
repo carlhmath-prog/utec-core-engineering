@@ -108,3 +108,8 @@ Inside result: None
 12 / 0 = None
 spam@camelot:~/$ 
 
+4. Lanzar una excepción
+Escribe una función que lance un TypeError.
+
+Prototipo: def raise_exception():
+La función debe lanzar un TypeError.

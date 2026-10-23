@@ -30,3 +30,13 @@ spam@camelot:~/$ ./main.py
 nb_print: 2
 spam@camelot:~/$ 
 
+1. Impresión segura de enteros
+Escribe una función que imprima un entero con "{:d}".format() seguido de una nueva línea.
+
+Prototipo: def safe_print_integer(value):
+Si value es un entero, imprímelo y devuelve True.
+De lo contrario, devuelve False.
+Debes usar try: / except:
+No se te permite importar ningún módulo
+No se te permite usar type()
+

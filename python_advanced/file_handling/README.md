@@ -50,3 +50,31 @@ spam@camelot:~/$ ./1-main.py
 spam@camelot:~/$ cat my_first_file.txt
 This School is so cool!
 spam@camelot:~/$ 
+
+2. Añadir a un archivo
+Escribe una función que añada una cadena al final de un archivo de texto (UTF-8) y devuelva el número de caracteres añadidos:
+
+Prototipo: def append_write(filename="", text=""):
+Si el archivo no existe, debe crearse
+Debes usar la sentencia with
+No necesitas gestionar excepciones de file permission ni de file doesn't exist.
+No se permite importar ningún módulo
+spam@camelot:~/$ cat 2-main.py
+#!/usr/bin/env python3
+append_write = __import__('append_write').append_write
+
+nb_characters_added = append_write("file_append.txt", "This School is so cool!\n")
+print(nb_characters_added)
+
+spam@camelot:~/$ cat file_append.txt
+cat: file_append.txt: No such file or directory
+spam@camelot:~/$ ./2-main.py
+24
+spam@camelot:~/$ cat file_append.txt
+This School is so cool!
+spam@camelot:~/$ ./2-main.py
+24
+spam@camelot:~/$ cat file_append.txt
+This School is so cool!
+This School is so cool!
+spam@camelot:~/$ 

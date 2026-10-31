@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Definición de la clase Square que representa un cuadrado."""
+"""Este módulo define la clase Square."""
 
 
 class Square:
-    """Clase vacía que representa un cuadrado."""
+    """Representa un cuadrado."""
 
     pass

@@ -165,3 +165,40 @@ Area: 9
 'Square' object has no attribute '__size'
 Area: 25
 spam@camelot:~/$ 
+
+5. Acceder y actualizar un atributo privado
+Objetivo
+Implementar acceso controlado a los atributos.
+
+Instrucciones
+Añade getters y setters para el atributo size.
+
+El setter debe validar la entrada usando las mismas reglas que antes.
+
+¿Por qué un getter y un setter?
+
+size es un atributo privado. Hicimos eso para asegurarnos de controlar el tipo y el valor. Los métodos getter y setter no son 100% Python, pero sí más orientados a POO. Con ellos, podrás validar la asignación de un atributo privado y también definir cómo estará disponible desde fuera el valor del atributo al obtenerlo: ¿por copia?, ¿por asignación?, etc. Además, añadir la validación de tipo/valor en el setter centralizará la lógica, ya que la harás en un solo lugar.
+
+Asegúrate de leer y entender esto: Getters and Setters: Manage Attributes in Python
+
+spam@camelot:~/$ cat 4-main.py
+#!/usr/bin/env python3
+Square = __import__('4-square').Square
+
+my_square = Square(89)
+print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+
+my_square.size = 3
+print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+
+try:
+    my_square.size = "5 feet"
+    print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+except Exception as e:
+    print(e)
+
+spam@camelot:~/$ ./4-main.py
+Area: 7921 for size: 89
+Area: 9 for size: 3
+size must be an integer
+spam@camelot:~/$ 

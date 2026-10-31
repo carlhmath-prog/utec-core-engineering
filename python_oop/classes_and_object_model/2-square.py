@@ -3,10 +3,10 @@
 
 
 class Square:
-    """Representa un cuadrado con validaciones en su tamaño."""
+    """Representa un cuadrado con validaciones."""
 
     def __init__(self, size=0):
-        """Inicializa un cuadrado validando que el tamaño sea un entero >= 0."""
+        """Inicializa un cuadrado validando tamaño."""
         if type(size) is not int:
             raise TypeError("size must be an integer")
         if size < 0:

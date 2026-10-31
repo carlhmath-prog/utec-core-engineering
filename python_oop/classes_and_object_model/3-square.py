@@ -6,7 +6,7 @@ class Square:
     """Representa un cuadrado con validación y área."""
 
     def __init__(self, size=0):
-        """Inicializa un cuadrado validando que el tamaño sea un entero >= 0."""
+        """Inicializa un cuadrado validando."""
         if type(size) is not int:
             raise TypeError("size must be an integer")
         if size < 0:

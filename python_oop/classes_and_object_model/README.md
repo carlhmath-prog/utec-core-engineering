@@ -248,3 +248,47 @@ spam@camelot:~/$ ./5-main.py
 
 --
 spam@camelot:~/$ 
+
+7. Imprimir la instancia cuadrada
+Objetivo
+Controlar cómo se representan los objetos como cadenas.
+
+Instrucciones
+Agrega e implementa el método especial:
+
+__str__()
+Atributo de instancia privado: position:
+propiedad def position(self): para recuperarlo
+setter de propiedad def position(self, value): para establecerlo:
+position debe ser una tupla de 2 enteros positivos, de lo contrario lanza una excepción TypeError con el mensaje position must be a tuple of 2 positive integer
+Instanciación con size opcional y position opcional: def __init__(self, size=0, position=(0, 0)):
+Método público de instancia: def my_print(self): que imprime en stdout el cuadrado con el carácter #:
+si size es igual a 0, imprime una línea vacía
+position debe usarse mediante espacios
+Imprimir una instancia de Square debe tener el mismo comportamiento que my_print()
+spma@camelot:~/$ cat 6-main.py
+#!/usr/bin/env python3
+Square = __import__('6-square').Square
+
+my_square = Square(5, (0, 0))
+print(my_square)
+
+print("--")
+
+my_square = Square(5, (4, 1))
+print(my_square)
+
+spma@camelot:~/$ ./6-main.py | tr " " "_" | cat -e
+#####$
+#####$
+#####$
+#####$
+#####$
+--$
+$
+____#####$
+____#####$
+____#####$
+____#####$
+____#####$
+spma@camelot:~/$ 

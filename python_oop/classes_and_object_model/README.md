@@ -333,3 +333,34 @@ spam@camelot:~/$ ./main.py
 {'_Rectangle__width': 2, '_Rectangle__height': 4}
 {'_Rectangle__width': 10, '_Rectangle__height': 3}
 spam@camelot:~/$ 
+
+9. Área y perímetro
+Objetivo
+Implementar el comportamiento de la clase rectángulo.
+
+Instrucciones
+Agrega los siguientes métodos de instancia a la clase Rectangle:
+
+area() que devuelve el área del rectángulo
+perimeter() que devuelve el perímetro del rectángulo:
+si width o height es igual a 0, el perímetro es igual a 0
+Ejemplo:
+
+spam@camelot:~/$ cat main.py
+#!/usr/bin/env python3
+Rectangle = __import__('2-rectangle').Rectangle
+
+my_rectangle = Rectangle(2, 4)
+print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+print("--")
+
+my_rectangle.width = 10
+my_rectangle.height = 3
+print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+spam@camelot:~/$ ./main.py
+Area: 8 - Perimeter: 12
+--
+Area: 30 - Perimeter: 26
+spam@camelot:~/$ 

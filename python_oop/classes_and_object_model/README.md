@@ -292,3 +292,44 @@ ____#####$
 ____#####$
 ____#####$
 spma@camelot:~/$ 
+
+8. Clase Rectángulo
+Objetivo
+Reforzar el modelado de objetos con una segunda clase.
+
+Instrucciones
+Define una clase Rectangle con:
+
+Atributo de instancia privado width:
+
+propiedad width(self) para recuperarlo
+
+setter de propiedad width(self, value) para asignarlo.
+
+width debe ser un entero; de lo contrario, lanza una excepción TypeError con el mensaje width must be an integer
+si width es menor que 0, lanza una excepción ValueError con el mensaje width must be >= 0
+Atributo de instancia privado height:
+
+propiedad height(self) para recuperarlo
+
+setter de propiedad height(self, value) para asignarlo
+
+height debe ser un entero; de lo contrario, lanza una excepción TypeError con el mensaje height must be an integer
+si height es menor que 0, lanza una excepción ValueError con el mensaje height must be >= 0
+Instanciación con width y height opcionales y valor por defecto de 0. (__init__(self, width=0, height=0))
+
+spam@camelot:~/$ cat main.py
+#!/usr/bin/env python3
+Rectangle = __import__('1-rectangle').Rectangle
+
+my_rectangle = Rectangle(2, 4)
+print(my_rectangle.__dict__)
+
+my_rectangle.width = 10
+my_rectangle.height = 3
+print(my_rectangle.__dict__)
+
+spam@camelot:~/$ ./main.py
+{'_Rectangle__width': 2, '_Rectangle__height': 4}
+{'_Rectangle__width': 10, '_Rectangle__height': 3}
+spam@camelot:~/$ 

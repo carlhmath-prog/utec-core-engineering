@@ -202,3 +202,49 @@ Area: 7921 for size: 89
 Area: 9 for size: 3
 size must be an integer
 spam@camelot:~/$ 
+
+6. Imprimir un cuadrado
+Objetivo
+Usar el estado del objeto para generar salida.
+
+Instrucciones
+Agregua un método de instancia público def my_print(self) que imprima en stdout el cuadrado con el carácter #
+Si size es igual a 0, imprime una línea vacía
+spam@camelot:~/$ cat 5-main.py
+#!/usr/bin/env python3
+Square = __import__('5-square').Square
+
+my_square = Square(3)
+my_square.my_print()
+
+print("--")
+
+my_square.size = 10
+my_square.my_print()
+
+print("--")
+
+my_square.size = 0
+my_square.my_print()
+
+print("--")
+
+spam@camelot:~/$ ./5-main.py
+###
+###
+###
+--
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+--
+
+--
+spam@camelot:~/$ 

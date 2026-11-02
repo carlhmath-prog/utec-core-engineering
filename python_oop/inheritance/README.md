@@ -205,3 +205,44 @@ Observación
 La lógica de validación no necesita reescribirse en esta clase. En su lugar, se reutiliza desde BaseGeometry.
 
 Esto demuestra reutilización de código a través de la herencia.
+
+3. Rectángulo completo
+Extiende la clase Rectangle.
+
+La clase ahora debe incluir:
+
+una implementación del método area()
+
+una representación en cadena legible del rectángulo
+
+Instanciación con width y height: def __init__(self, width, height)::
+
+width y height deben ser privados. Sin getter ni setter
+
+width y height deben ser enteros positivos validados por integer_validator
+
+el método area() debe estar implementado
+
+print() debe imprimir, y str() debe devolver, la siguiente descripción del rectángulo: [Rectangle] <width>/<height>
+
+spam@camelot:~/$ cat main.py
+#!/usr/bin/env python3
+Rectangle = __import__('2-rectangle').Rectangle
+
+r = Rectangle(3, 5)
+
+print(r)
+print(r.area())
+
+spam@camelot:~/$ ./main.py
+[Rectangle] 3/5
+15
+spam@camelot:~/$ 
+Observación
+En este punto, tu clase Rectangle proporciona una implementación concreta de area().
+
+La clase padre definió que el método debía existir, mientras que la clase Rectangle define cómo se calcula realmente el área.
+
+Otras figuras, como Square, también pueden implementar area().
+
+Como distintos objetos pueden responder a la misma llamada de método con su propia implementación, los programas pueden trabajar con diferentes figuras a través de una interfaz común. Esto es un ejemplo de polimorfismo.

@@ -246,3 +246,28 @@ La clase padre definió que el método debía existir, mientras que la clase Rec
 Otras figuras, como Square, también pueden implementar area().
 
 Como distintos objetos pueden responder a la misma llamada de método con su propia implementación, los programas pueden trabajar con diferentes figuras a través de una interfaz común. Esto es un ejemplo de polimorfismo.
+
+4. Cuadrado #1
+Crea una clase Square que herede de Rectangle.
+
+Un cuadrado es un rectángulo especializado en el que el ancho y la altura son iguales.
+
+El constructor debe recibir un solo parámetro que represente el tamaño del cuadrado e inicializar la clase padre en consecuencia.
+
+Instanciación con size: def __init__(self, size)::
+size debe ser privado. Sin getter ni setter
+size debe ser un entero positivo, validado por integer_validator
+El método area() debe implementarse
+spam@camelot:~/$ cat main.py
+#!/usr/bin/env python3
+Square = __import__('1-square').Square
+
+s = Square(13)
+
+print(s)
+print(s.area())
+
+spam@camelot:~/$ ./main.py
+[Rectangle] 13/13
+169
+spam@camelot:~/$ 

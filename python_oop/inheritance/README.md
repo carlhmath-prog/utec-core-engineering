@@ -165,3 +165,43 @@ Repositorio:
 Repositorio GitHub: utec-core-engineering
 Directorio: python_oop/inheritance
 Archivo: base_geometry.py
+
+2. Rectángulo
+Crea una clase Rectangle que herede de BaseGeometry.
+
+La clase debe representar un rectángulo definido por su ancho y su altura.
+
+Ambos valores deben validarse usando el validador definido en la clase padre.
+
+Instanciación con width y height: def __init__(self, width, height):
+width y height deben ser privados. No hay getter ni setter
+width y height deben ser enteros positivos, validados por integer_validator
+spam@camelot:~/$ cat main.py
+#!/usr/bin/env python3
+Rectangle = __import__('1-rectangle').Rectangle
+
+r = Rectangle(3, 5)
+
+print(r)
+print(dir(r))
+
+try:
+    print("Rectangle: {} - {}".format(r.width, r.height))
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    r2 = Rectangle(4, True)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+spam@camelot:~/$ ./main.py
+<1-rectangle.Rectangle object at 0x7f6f488f7eb8>
+['_Rectangle__height', '_Rectangle__width', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__getattribute__', '__gt__', '__hash__', '__init__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'area', 'integer_validator']
+[AttributeError] 'Rectangle' object has no attribute 'width'
+[TypeError] height must be an integer
+spam@camelot:~/$ 
+Observación
+La lógica de validación no necesita reescribirse en esta clase. En su lugar, se reutiliza desde BaseGeometry.
+
+Esto demuestra reutilización de código a través de la herencia.

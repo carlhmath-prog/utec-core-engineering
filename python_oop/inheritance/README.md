@@ -75,3 +75,93 @@ print(isinstance(dog, Dog))
 print(isinstance(dog, Animal))
 
 print(issubclass(Dog, Animal))
+
+1. Geometría básica
+Crea una clase llamada BaseGeometry.
+
+Esta clase representa un concepto fundamental para las figuras geométricas. Define el comportamiento sobre el que otras clases de figuras construirán.
+
+El propósito de esta clase es proporcionar funcionalidad compartida que las subclases puedan reutilizar.
+
+Requisitos
+La clase debe incluir los siguientes métodos.
+
+area(self)
+Este método representa el área de una figura geométrica.
+
+En esta etapa, la clase base no define cómo debe calcularse el área, porque distintas figuras calculan su área de manera diferente.
+
+En su lugar, este método debe lanzar una excepción que indique que el cálculo no está implementado en esta clase.
+
+Más adelante, las clases que representen figuras específicas proporcionarán su propia implementación de este método.
+
+spam@camelot:~/$ cat main.py
+#!/usr/bin/env python3
+BaseGeometry = __import__('base_geometry').BaseGeometry
+
+bg = BaseGeometry()
+
+try:
+    print(bg.area())
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+spam@camelot:~/$ ./main.py
+[Exception] area() is not implemented
+spam@camelot:~/$ 
+integer_validator(self, name, value)
+Este método valida que un valor represente un entero positivo válido.
+
+El método debe verificar que:
+
+value sea un entero
+value sea mayor que 0
+Si value no es un entero, lanza:
+
+TypeError: <name> must be an integer
+Si value es menor o igual que 0, lanza:
+
+ValueError: <name> must be greater than 0
+El parámetro name debe usarse en los mensajes de error.
+
+spam@camelot:~/$ cat main.py
+#!/usr/bin/env python3
+BaseGeometry = __import__('base_geometry').BaseGeometry
+
+bg = BaseGeometry()
+
+bg.integer_validator("my_int", 12)
+bg.integer_validator("width", 89)
+
+try:
+    bg.integer_validator("name", "John")
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    bg.integer_validator("age", 0)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    bg.integer_validator("distance", -4)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+spam@camelot:~/$ ./main.py
+[TypeError] name must be an integer
+[ValueError] age must be greater than 0
+[ValueError] distance must be greater than 0
+spam@camelot:~/$ 
+Por qué importa
+La clase BaseGeometry define comportamiento común que puede reutilizarse en múltiples figuras geométricas.
+
+Por ejemplo, validar parámetros numéricos es una tarea que varias clases de figuras necesitarán realizar. En lugar de repetir esta lógica en cada clase, se define una sola vez y se reutiliza mediante la herencia.
+
+El método area() también establece una interfaz compartida: todas las figuras derivadas de esta clase proporcionarán su propia forma de calcular un área.
+
+Repositorio:
+
+Repositorio GitHub: utec-core-engineering
+Directorio: python_oop/inheritance
+Archivo: base_geometry.py

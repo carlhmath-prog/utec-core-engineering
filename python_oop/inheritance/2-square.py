@@ -4,7 +4,9 @@ Módulo 2-square
 Define la clase Square que hereda de Rectangle y personaliza su impresión.
 """
 
-Rectangle = __import__('1-rectangle').Rectangle if False else __import__('2-rectangle').Rectangle
+Rectangle = __import__(
+    '2-rectangle'
+).Rectangle
 
 
 class Square(Rectangle):

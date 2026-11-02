@@ -271,3 +271,35 @@ spam@camelot:~/$ ./main.py
 [Rectangle] 13/13
 169
 spam@camelot:~/$ 
+
+5. Cuadrado #2
+Extiende la clase Square.
+
+Agrega la representación de cadena apropiada para el cuadrado.
+
+print() debe imprimir, y str() debe devolver, la descripción del cuadrado: [Square] <width>/<height>
+spam@camelot:~/$ cat main.py
+#!/usr/bin/env python3
+Square = __import__('2-square').Square
+
+s = Square(13)
+
+print(s)
+print(s.area())
+
+spam@camelot:~/$ ./2-main.py
+[Square] 13/13
+169
+spam@camelot:~/$ 
+Reflexión
+Considera el siguiente ejemplo:
+
+shapes = [Rectangle(3, 5), Square(4)]
+
+for shape in shapes:
+    print(shape.area())
+Aunque los objetos de la lista no sean de la misma clase, el programa puede llamar al mismo método en cada objeto.
+
+Cada clase proporciona su propia implementación de area(), por lo que se realiza el cálculo correcto para cada figura.
+
+Esto ilustra una ventaja importante de la herencia y el polimorfismo: los programas pueden trabajar con objetos relacionados mediante un conjunto compartido de métodos, sin necesidad de conocer la clase exacta de cada objeto.
